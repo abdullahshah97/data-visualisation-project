@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 from random_walk import RandomWalk
 
-#Make a random walk and plot the points
+#Make a random walk and plot the point
 #Keep making random walks whiile program is active
 while True:
     rw = RandomWalk(50000)
