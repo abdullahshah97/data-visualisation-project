@@ -5,7 +5,8 @@ from matplotlib import pyplot as plt
 
 
 #Weather file
-filename = 'sitka_weather_07-2014.csv'
+#filename = 'sitka_weather_07-2014.csv'
+filename = 'sitka_weather_2014'
 
 # CSV reader object and read line by line
 # Get dates and max temps from file.
@@ -34,7 +35,8 @@ fig = plt.figure(dpi=128, figsize=(10,6))
 plt.plot(dates, highs, c='red')
 
 # Format plot
-plt.title("Daily High Temperatures, July 2014", fontsize = 24)
+# plt.title("Daily High Temperatures, July 2014", fontsize = 24)
+plt.title("Daily High Temperatures - 2014", fontsize = 24)
 plt.xlabel('Date', fontsize=14)
 fig.autofmt_xdate()
 plt.ylabel('Temperature (F)', fontsize=14)
