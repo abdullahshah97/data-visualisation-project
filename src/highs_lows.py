@@ -20,10 +20,14 @@ with open(filename) as f:
 
     # First column contains dates
     # Retrieving max temps, second column of row has this value, convert to int so read by matplotlib
-    dates, highs = [], []
+    # Minimum temperatures retrieved also
+    dates, highs, lows = [], [], []
     for row in reader:
         current_date = datetime.strptime(row[0],'%Y-%m-%d')
         dates.append(current_date)
+
+        low = int(row[3])
+        lows.append(low)
 
         high = int(row[1])
         highs.append(high)
@@ -33,10 +37,11 @@ with open(filename) as f:
 # Plot the data
 fig = plt.figure(dpi=128, figsize=(10,6))
 plt.plot(dates, highs, c='red')
+plt.plot(dates, lows, c='blue')
 
 # Format plot
 # plt.title("Daily High Temperatures, July 2014", fontsize = 24)
-plt.title("Daily High Temperatures - 2014", fontsize = 24)
+plt.title("Daily High and Low Temperatures - 2014", fontsize = 24)
 plt.xlabel('Date', fontsize=14)
 fig.autofmt_xdate()
 plt.ylabel('Temperature (F)', fontsize=14)
